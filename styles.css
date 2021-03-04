@@ -1,5 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+@font-face{
+    font-family:"Booter-Zero";
+    src:url("fonts/BOOTERFZ.ttf") format("ttf");
+    font-weight: normal ;
+    font-style:normal;
+}
+
 *{
     box-sizing: border-box;
+    font-family: Raleway;
+    color:#777;
 }
 html,body{
     margin: 0;
@@ -9,6 +21,66 @@ html,body{
 nav ul{
     margin:0;
 }
+
+.nav li{
+    display: inline;
+
+}
+
+.nav a{
+    display: inline-block;
+    padding: 0.5em;
+    color:white;
+    text-decoration: none;
+}
+
+
+[data-tooltip]:hover{
+    position: relative;
+    background-color: rgb(158, 142, 123, .3);
+}
+
+[data-tooltip]:hover::after{
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 10px;
+    left: 60px;
+   
+    z-index: 2;
+    margin-top: 30px;
+    padding: 3px;
+    background-color: rgb(225, 225,225,.3);
+    color:black
+}
+
+
+
+.main-nav{
+    text-align: center;
+    font-size: 1.1em;
+    font-weight:lighter;
+    border-bottom: 1px solid rgba(255,255,255, .3) ;
+
+}
+
+.main-nav li{
+    padding: 0 10%;
+}
+
+.band-name{
+    text-align: center;
+    margin: 0;
+    font-size:4em;
+    font-family:"Booter-Zero";
+    color:white;
+    font-weight: normal;
+}
+
+.band-name-large{
+    font-size: 9em;
+}
+
+
 .main-header{
     background-color: rgba(102, 102, 219, 0.5);
     background-image: url('images/header_background.jpg') ;
@@ -16,5 +88,62 @@ nav ul{
     background-size: cover;
     padding-bottom: 20px;
     margin-top: 0px;
+
+}
+
+.content-section{
+    margin:1em;
+}
+
+.container{
+    max-width: 1800px;
+    margin: 0 auto;
+    padding:0 1.5em;
+}
+
+.section-header{
+    font-family: "Metal Mania";
+    font-size: 3em;
+    font-weight: normal;
+    color: rgb(57, 5, 82);
+    text-align: center;
+}
+.about-band-image{
+    float:left;
+    height: 250px;
+    width:250px;
+    margin: 50px;
+    border-radius: 50%;
+}
+
+.main-footer{
+    background-color: rgb(60, 3, 87,0.8) ;
+    color:white;
+    padding: .25e 0;
+}
+.main-footer-container{
+    display: flex;
+}
+
+.footer-nav img{
+    height: 55px;
+    width: 55px;
+    align-items: center;
+}
+
+
+
+.main-footer-container ul{
+    flex-grow: 1;
+    text-align:right;
+    margin:20px;
+}
+.footer-nav li{
+    padding: 0 .5em;
+}
+
+.footer-nav [data-tooltip]:hover::after {
+    top:-40px;
+    left: 50px;
 
 }
