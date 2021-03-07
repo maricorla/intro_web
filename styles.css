@@ -110,7 +110,7 @@ nav ul{
 }
 .about-band-image{
     float:left;
-    height: 250px;
+    height:250px;
     width:250px;
     margin: 50px;
     border-radius: 50%;
@@ -146,4 +146,38 @@ nav ul{
     top:-40px;
     left: 50px;
 
+}
+
+.btn{
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.7em;
+    cursor:pointer;
+}
+
+.btn-header{
+    margin: 1em 15% 2em 15%;
+    color: white;
+    border: 2px solid rgba(64, 2, 83, .8);
+    background-color: rgba(255,255,255, 0.1);
+    font-size: 1.8em;
+    border-radius: 0;
+    font-weight: lighter;
+    padding-left: 2em;
+   padding-right: 2em;
+}
+
+.btn-header:hover{
+    background-color: rgba(255,255,255, .3);
+}
+
+.btn-play{
+    display: block;
+    margin:0 auto;
+    color: rgba(64, 2, 83, .8);
+    font-size: 4em;
+    border-radius: 50%;
+    padding: 0;
+    width: 100px;
+    height: 100px;
 }
