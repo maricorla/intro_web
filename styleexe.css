@@ -1,0 +1,123 @@
+.grandparent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+height: 400px;
+width: 400px;
+    background-color: red;
+}
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+width: 200px;
+    background-color: blue;
+}
+.child{
+    height: 100px;
+    width: 100px;
+    background-color: green;
+}
+
+.rectangle{
+    background-color: yellow;
+    height:100px;
+    width: 250px;
+    border-radius: 15%;
+    border: 2px solid black;
+    margin:40px;
+}
+.container{
+    
+    height: 200px;
+    width:260px;
+    display:flex;
+    justify-content: space-around;
+    align-items:flex-start;
+    margin-left: 30px;
+}
+
+.circle1{
+    background-color: blueviolet;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border:2px solid black
+}
+.circle2{
+    background-color: greenyellow;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border:2px solid black
+}
+.circle3{
+    background-color: blue;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border:2px solid black
+}
+
+.plus-section, .minus-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 75px;
+    border: 3px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+  
+   
+}
+.plus, .minus{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+.number{
+    height: 60px;
+    width: 100px;
+    margin:20px;
+    color:orange;
+    font-family: 'Courier New', Courier, monospace;
+    font-family: bold;
+    font-size: 50px;
+    text-align: center;
+}
+.row{
+width: 400px;
+display: flex;
+justify-content: space-around;
+align-items: center;
+
+}
+.plus span, .minus span
+{
+    font-size:50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight:bold;
+}
+
+.tip-calc{
+    width:300px;
+    height: 350px;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+.tip-calc input{
+    margin:10px 0 10px 0;
+    height: 40px;
+    background-color: beige;
+    border:1px solid black;
+    color:blue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+}
