@@ -90,7 +90,7 @@ function quantityChanged(event){
 
 function removeCartItem(event){
     var buttonClicked = event.target
-    buttonClicked.parentElement.parentElement.remove()
+    buttonClicked.parentElement.parentElement.remodive()
     updateCartTotal()
 
 }

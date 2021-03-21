@@ -1,6 +1,4 @@
-
-    
-    /* const grandparent = document.querySelector(".grandparent");
+/* const grandparent = document.querySelector(".grandparent");
     const parent= document.querySelector(".parent");
     const child= document.querySelector(".child");
     console.log(grandparent);
@@ -59,7 +57,7 @@
             return number.innerHTML = (num-1).toString()
         }
       
-     } */
+     } 
      let billAmount = document.querySelector(".bill-amount")
        billAmount.addEventListener('change', updateAll)
     
@@ -84,22 +82,93 @@
         console.log(total)
 
     }
-   
-     
-
-/*
-
-
-     function takeValue(){
-      
-       console.log(billQuantity)
-       let tipPercentage = tipPerc.value
-       console.log(tipPercentage)
-       let amountOfTip= (billQuantity*tipPercentage)/100
-       console.log(amountOfTip)
-       let total = parseFloat(billQuantity) + parseFloat(amountOfTip)
-       console.log(total)
-     }
-     takeValue()
       */
+
+    let addTodo = document.querySelector(".btn-add")
+      addTodo.addEventListener('click', addTodoTitle)
+
+      let insertedTodo= document.querySelector(".inserted-todo")
+
+      let checkButtons= document.querySelector(".btn-check")
+      if (checkButtons) {
+        for(var i=0; i<checkButtons.length;i++){
+            var button=checkButtons[i]
+            button.addEventListener('click', checkTodo)
+        }
+      }
+
+
+    let deleteButtons= document.querySelector(".btn-delete")
+    if (deleteButtons) {
+        for(var i=0; i<deleteButtons.length;i++){
+            var button=deleteButtons[i]
+            button.addEventListener('click', removeTodo)
+        }
+    }
+
+
+      function checkTodo(event){
+    let button=event.target
+    let divContainer = button.parentElement.parentElement;
+    divContainer.getElementsByClassName("list-item")[0].style.textDecoration ="line-through"
+
+      }
+
+    
+    
+      function removeTodo(event){
+          let button =event.target
+          button.parentElement.parentElement.parentElement.remove()
+        
+                 
+        
+              }
+
+
+     
+      function addTodoTitle(){ 
+          let textTodo =insertedTodo.value
+         addRow(textTodo)
+         clearText()
+       
+
+      }
+
+      function addRow(textOfTodo){
+          let listRow = document.createElement('div')
+        
+          let rowTodoInList = document.querySelector(".list-todo")
+          let listRowContent = `<div class="addedRow">
+          <span class="list-item">${textOfTodo}</span>
+          <button class="btn-delete" role="button"> <img class="add" src="images/delete.png"></button>
+          <button class="btn-check" role="button"> <img class="add" src="images/check.png"></button>
+          </div> <hr>`
+          listRow.innerHTML = listRowContent
+          rowTodoInList.append(listRow)
+          listRow.getElementsByClassName("btn-check")[0].addEventListener('click', checkTodo)
+          listRow.getElementsByClassName("btn-delete")[0].addEventListener('click', removeTodo)
+
+
+         
+      }
+
+      function clearText() {
+        // we use getElementById method to select the text input and than change its value to an empty string 
+        console.log(insertedTodo)
+        insertedTodo.value = "";
+    }   
+
+   
+
+    
+
+      
+
+     
+        
+        
+
+      
+
+
      
