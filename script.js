@@ -81,13 +81,22 @@
         totalAmount.value = total.toFixed(2)
         console.log(total)
 
-    }
-      */
+    }*/
+  
+
 
     let addTodo = document.querySelector(".btn-add")
-      addTodo.addEventListener('click', addTodoTitle)
+      addTodo.addEventListener('click', (event)=>{
+        addTodoTitle(insertedTodo.value)
+      })
+      
 
       let insertedTodo= document.querySelector(".inserted-todo")
+      insertedTodo.addEventListener('keyup', (event)=>{
+        if(event.key==='Enter'){
+          addTodoTitle(insertedTodo.value)
+        }
+      })
 
       let checkButtons= document.querySelector(".btn-check")
       if (checkButtons) {
@@ -118,15 +127,20 @@
     
       function removeTodo(event){
           let button =event.target
-          button.parentElement.parentElement.parentElement.remove()      
-              }
+          button.parentElement.parentElement.parentElement.remove() 
+      
+       }
 
 
-      function addTodoTitle(){ 
-          let textTodo =insertedTodo.value
+      function addTodoTitle(text){ 
+       
+          let textTodo = text 
          addRow(textTodo)
          clearText()
- 
+      
+         todos.push(textTodo);
+      
+        saveLocalStorage()
 
       }
 
@@ -136,8 +150,8 @@
           let rowTodoInList = document.querySelector(".list-todo")
           let listRowContent = `<div class="addedRow">
           <span class="list-item">${textOfTodo}</span>
-          <button class="btn-delete" role="button" data-tooltip="Удалить"> <img class="add" src="images/delete.png"></button>
-          <button class="btn-check" role="button" data-tooltip="Готово"> <img class="add" src="images/check.png"></button>
+          <button class="btn-delete" role="button" data-tooltip="Rimuovi"> <img class="add" src="images/delete.png"></button>
+          <button class="btn-check" role="button" data-tooltip="Seleziona"> <img class="add" src="images/check.png"></button>
           </div>`
           listRow.innerHTML = listRowContent
           rowTodoInList.append(listRow)
@@ -149,10 +163,28 @@
       }
 
       function clearText() {
-        // we use getElementById method to select the text input and than change its value to an empty string 
-        console.log(insertedTodo)
         insertedTodo.value = "";
     }   
+
+    function saveLocalStorage(){
+
+      localStorage.setItem("todos", JSON.stringify(todos));
+
+    }
+
+    var todos = [] 
+    
+    var storageTodos = JSON.parse(localStorage.getItem("todos"));
+    
+    if (storageTodos) {
+      localStorage.removeItem("todos")
+
+      storageTodos.forEach(text => {
+        addTodoTitle(text)
+      });
+    }
+
+console.log(todos)
 
    
 
