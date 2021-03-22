@@ -110,27 +110,23 @@
       function checkTodo(event){
     let button=event.target
     let divContainer = button.parentElement.parentElement;
-    divContainer.getElementsByClassName("list-item")[0].style.textDecoration ="line-through"
-
+    divContainer.getElementsByClassName("list-item")[0].setAttribute("style", "text-decoration: line-through; color:green")
+    
       }
 
     
     
       function removeTodo(event){
           let button =event.target
-          button.parentElement.parentElement.parentElement.remove()
-        
-                 
-        
+          button.parentElement.parentElement.parentElement.remove()      
               }
 
 
-     
       function addTodoTitle(){ 
           let textTodo =insertedTodo.value
          addRow(textTodo)
          clearText()
-       
+ 
 
       }
 
@@ -140,9 +136,9 @@
           let rowTodoInList = document.querySelector(".list-todo")
           let listRowContent = `<div class="addedRow">
           <span class="list-item">${textOfTodo}</span>
-          <button class="btn-delete" role="button"> <img class="add" src="images/delete.png"></button>
-          <button class="btn-check" role="button"> <img class="add" src="images/check.png"></button>
-          </div> <hr>`
+          <button class="btn-delete" role="button" data-tooltip="Удалить"> <img class="add" src="images/delete.png"></button>
+          <button class="btn-check" role="button" data-tooltip="Готово"> <img class="add" src="images/check.png"></button>
+          </div>`
           listRow.innerHTML = listRowContent
           rowTodoInList.append(listRow)
           listRow.getElementsByClassName("btn-check")[0].addEventListener('click', checkTodo)
