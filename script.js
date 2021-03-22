@@ -150,8 +150,8 @@
           let rowTodoInList = document.querySelector(".list-todo")
           let listRowContent = `<div class="addedRow">
           <span class="list-item">${textOfTodo}</span>
-          <button class="btn-delete" role="button" data-tooltip="Rimuovi"> <img class="add" src="images/delete.png"></button>
-          <button class="btn-check" role="button" data-tooltip="Seleziona"> <img class="add" src="images/check.png"></button>
+          <button class="btn-delete" role="button" data-tooltip="Удалить"> <img class="add" src="images/delete.png"></button>
+          <button class="btn-check" role="button" data-tooltip="Готово"> <img class="add" src="images/check.png"></button>
           </div>`
           listRow.innerHTML = listRowContent
           rowTodoInList.append(listRow)

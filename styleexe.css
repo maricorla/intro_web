@@ -138,10 +138,10 @@ html,body{
     margin: 0;
     padding: 0;
     height: 100%;
-    color: white;
+    color: rgb(75, 73, 70);
 }
 .todo-app{
-    background-image: url('images/background.jpg') ;
+    background-image: url('images/background_.jpeg') ;
     background-repeat: no-repeat;
     background-size:cover;
     width: 100%;
@@ -161,7 +161,7 @@ html,body{
 
 .contain, .addedRow{
     display: flex;
-    color:white;
+   
 }
 
 input{
