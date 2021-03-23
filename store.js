@@ -1,4 +1,4 @@
-if(document.readyState=='loading'){
+ if(document.readyState=='loading'){
     console.log('loading')
     document.addEventListener('DOMContentLoaded', ready)
 }else{
@@ -28,6 +28,8 @@ function ready(){
     }
 
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+
+   
 }
 
 function purchaseClicked(){
@@ -110,5 +112,25 @@ for(var i=0; i<cartRows.length;i++){
 }
 total =Math.round(total*100)/100
 document.getElementsByClassName('cart-total-price')[0].innerText = '$'+total
-} 
+}  
+
+{		
+    const scrollLinks = document.querySelectorAll('a.scroll-link')
+    console.log('text',scrollLinks)
+    
+    for(let i=0; i < scrollLinks.length; i++){
+        console.log('im here')
+        scrollLinks[i].addEventListener('click', function(event){
+            event.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior:'smooth',
+            block:'start'
+        })
+        })
+    }
+}
+
+
+
+
 
